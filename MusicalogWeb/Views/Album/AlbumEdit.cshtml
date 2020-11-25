@@ -1,0 +1,69 @@
+﻿@model MusicalogWeb.ViewModels.AlbumVM
+
+<input id="hfAlbumListURL" type="hidden" value="@ViewBag.AlbumListURL" />
+
+@using (Html.BeginForm("AlbumEdit", "Album", FormMethod.Get, new { id = "formAlbum", @class = "form-horizontal", @role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card panelAlbumEdit">
+        <h5 class="card-header">@Model.PanelTitle</h5>
+        <div class="card-body">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    @Html.LabelFor(x => x.AlbumName, new { @class = "col-form-label" })
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-7">
+                    @Html.TextBoxFor(x => x.AlbumName, new { id = "txtAlbumName", @MaxLength = "50", @class = "form-control textbox" })
+                    @Html.ValidationMessageFor(x => x.AlbumName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    @Html.LabelFor(x => x.Artist, new { @class = "control-label col-form-label" })
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-7">
+                    @Html.TextBoxFor(x => x.Artist, new { id = "txtArtist", @MaxLength = "50", @class = "form-control textbox" })
+                    @Html.ValidationMessageFor(x => x.Artist, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    @Html.LabelFor(x => x.AlbumLabel, new { @class = "control-label col-form-label" })
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-7">
+                    @Html.TextBoxFor(x => x.AlbumLabel, new { id = "txtArtist", @MaxLength = "50", @class = "form-control textbox" })
+                    @Html.ValidationMessageFor(x => x.AlbumLabel, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    @Html.LabelFor(x => x.AlbumType, new { @class = "control-label col-form-label" })
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-7">
+                    @Html.TextBoxFor(x => x.AlbumType, new { id = "txtAlbumType", @MaxLength = "1", @class = "form-control textbox" })
+                    @Html.ValidationMessageFor(x => x.AlbumType, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-4 col-sm-3 col-md-3">
+                    @Html.LabelFor(x => x.Stock, new { @class = "control-label col-form-label" })
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-7">
+                    @Html.TextBoxFor(x => x.Stock, new { id = "txtStock", @MaxLength = "7", @class = "form-control textbox" })
+                    @Html.ValidationMessageFor(x => x.Stock, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <input id="btnSaveAlbum" type="button" class="btn btn-primary btn-sm" value="Save" onclick="return saveAlbum();" />
+            <input id="btnCancelAlbum" type="button" class="btn btn-primary btn-sm" value="Cancel" onclick="return cancelAlbum();" />
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/albumEdit")
+}

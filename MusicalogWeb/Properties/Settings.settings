@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MusicalogWeb.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AlbumPageTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Albums</Value>
+    </Setting>
+    <Setting Name="DefAlbumPageSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="AlbumType1Desc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Vinyl</Value>
+    </Setting>
+    <Setting Name="AlbumType2Desc" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CD</Value>
+    </Setting>
+    <Setting Name="AppTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Musicalog</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

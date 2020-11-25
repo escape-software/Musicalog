@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicalogService", "MusicalogWCF\MusicalogService.csproj", "{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicalogModel", "MusicalogModel\MusicalogModel.csproj", "{F1D1FCAE-F675-45D0-8C96-14F209CD6601}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicalogData", "MusicalogData\MusicalogData.csproj", "{F677DEDA-D387-4844-828B-4461384F152F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicalogWeb", "MusicalogWeb\MusicalogWeb.csproj", "{58D6E043-34CD-4E51-9517-91BDA4C5CAF8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA} = {DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF572E93-97DC-4FE7-9040-9D8CEF5D9CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1D1FCAE-F675-45D0-8C96-14F209CD6601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1D1FCAE-F675-45D0-8C96-14F209CD6601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1D1FCAE-F675-45D0-8C96-14F209CD6601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1D1FCAE-F675-45D0-8C96-14F209CD6601}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F677DEDA-D387-4844-828B-4461384F152F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F677DEDA-D387-4844-828B-4461384F152F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F677DEDA-D387-4844-828B-4461384F152F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F677DEDA-D387-4844-828B-4461384F152F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58D6E043-34CD-4E51-9517-91BDA4C5CAF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58D6E043-34CD-4E51-9517-91BDA4C5CAF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58D6E043-34CD-4E51-9517-91BDA4C5CAF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58D6E043-34CD-4E51-9517-91BDA4C5CAF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {686810A1-1710-4765-872C-A2D173C54052}
+	EndGlobalSection
+EndGlobal

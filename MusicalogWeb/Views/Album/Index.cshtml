@@ -1,0 +1,73 @@
+﻿@model MusicalogWeb.ViewModels.AlbumListVM
+
+<input id="hfAlbumListURL" type="hidden" value="@ViewBag.AlbumListURL" />
+<input id="hfAlbumEditURL" type="hidden" value="@ViewBag.AlbumEditURL" />
+<input id="hfAlbumDeleteURL" type="hidden" value="@ViewBag.AlbumDeleteURL" />
+
+<div class="row">
+    <h2>Album List</h2>
+</div>
+<div class="row justify-content-md-end">
+    <input id="btnAddAlbum" type="button" class="btn-sm btn-primary" value="Add Album" onclick="addAlbum();" />
+</div>
+@if (Model.AlbumList != null && Model.AlbumList.Count > 0)
+{
+    using (Html.BeginForm("AlbumSort", "Album", FormMethod.Post, new { id = "formAlbumSort", @class = "form-horizontal", @role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group row justify-content-md-start">
+            <label class="col-form-label col-md-2 sortByLabel" for="selSortBy">Sort By:</label>
+            <div class="col-md-3">
+                <select class="form-control" name="selSortBy" id="selSortBy">
+                    <option value="1" selected>Album Name</option>
+                    <option value="2">Artist</option>
+                    <option value="3">Album Type</option>
+                    <option value="4">Stock</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input id="btnSortBy" type="submit" value="Sort Albums" class="btn-sm btn-primary" />
+            </div>
+        </div>
+    }
+    <div class="row albumList">
+        <div class="table-responsive">
+            <table class="table table-condensed table-bordered table-striped">
+                <tr>
+                    <th>Album Name</th>
+                    <th>Artist</th>
+                    <th>Album Type</th>
+                    <th>Stock</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model.AlbumList)
+                {
+                    <tr>
+                        <td>@item.AlbumName</td>
+                        <td>@item.Artist</td>
+                        <td>@item.AlbumTypeDesc</td>
+                        <td>@item.Stock</td>
+                        <td class="rowButton"><input id="btnEditAlbum" type="button" class="btn-sm btn-primary" value="Edit" onclick="editAlbum(@item.AlbumID);" /></td>
+                        <td class="rowButton"><input id="btnDeleteAlbum" type="button" class="btn-sm btn-primary" value="Del" onclick="deleteAlbum(@item.AlbumID);" /></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <nav aria-label="Album list pagination">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="@Url.Content("~/Album/AlbumListPagination/0")">Previous</a></li>
+                <li class="page-item"><div class="badge-info pageNum">Page @Model.PageNum</div></li>
+                <li class="page-item"><a class="page-link" href="@Url.Content("~/Album/AlbumListPagination/1")">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+}
+else
+{
+    <div class="row jumbotron">There are no albums to display.</div>
+}
+
+@Scripts.Render("~/bundles/albumList")

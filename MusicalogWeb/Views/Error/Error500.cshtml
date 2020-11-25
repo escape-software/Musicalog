@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Website Error";
+    Layout = "~/Views/Shared/_LayoutError.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Website System Error</h5>
+    <div class="card-body">
+        <p class="card-text">@TempData.Peek("AppTitle") encountered an error which is detailed below.</p>
+        <p class="card-text">@TempData.Peek("ErrorMessage")</p>
+    </div>
+</div>

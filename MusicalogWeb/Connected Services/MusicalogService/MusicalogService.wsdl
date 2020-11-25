@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MusicalogService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:61488/MusicalogService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:61488/MusicalogService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:61488/MusicalogService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MusicalogModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMusicalogService_GetAlbums_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbums" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_GetAlbums_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbumsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_GetAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_GetAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_SaveAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_SaveAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAlbumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_DeleteAlbum_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbum" />
+  </wsdl:message>
+  <wsdl:message name="IMusicalogService_DeleteAlbum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlbumResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMusicalogService">
+    <wsdl:operation name="GetAlbums">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMusicalogService/GetAlbums" message="tns:IMusicalogService_GetAlbums_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMusicalogService/GetAlbumsResponse" message="tns:IMusicalogService_GetAlbums_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMusicalogService/GetAlbum" message="tns:IMusicalogService_GetAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMusicalogService/GetAlbumResponse" message="tns:IMusicalogService_GetAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMusicalogService/SaveAlbum" message="tns:IMusicalogService_SaveAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMusicalogService/SaveAlbumResponse" message="tns:IMusicalogService_SaveAlbum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMusicalogService/DeleteAlbum" message="tns:IMusicalogService_DeleteAlbum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMusicalogService/DeleteAlbumResponse" message="tns:IMusicalogService_DeleteAlbum_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMusicalogService" type="tns:IMusicalogService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAlbums">
+      <soap:operation soapAction="http://tempuri.org/IMusicalogService/GetAlbums" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlbum">
+      <soap:operation soapAction="http://tempuri.org/IMusicalogService/GetAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAlbum">
+      <soap:operation soapAction="http://tempuri.org/IMusicalogService/SaveAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlbum">
+      <soap:operation soapAction="http://tempuri.org/IMusicalogService/DeleteAlbum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MusicalogService">
+    <wsdl:port name="BasicHttpBinding_IMusicalogService" binding="tns:BasicHttpBinding_IMusicalogService">
+      <soap:address location="http://localhost:61488/MusicalogService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

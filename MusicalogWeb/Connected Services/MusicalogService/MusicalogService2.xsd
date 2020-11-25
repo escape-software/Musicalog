@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MusicalogModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MusicalogModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfAlbum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Album" nillable="true" type="tns:Album" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlbum" nillable="true" type="tns:ArrayOfAlbum" />
+  <xs:complexType name="Album">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlbumID" type="xs:int" />
+      <xs:element minOccurs="0" name="AlbumLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlbumName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AlbumType" type="xs:int" />
+      <xs:element minOccurs="0" name="Artist" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stock" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Album" nillable="true" type="tns:Album" />
+</xs:schema>
