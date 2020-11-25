@@ -22,7 +22,7 @@ For testing purposes the MusicalogService project was published to a local folde
 
 The MusicalogService project also has IISExpress configured to use MusicalogService on the endpoint http://localhost:61488/MusicalogService.svc and the MusicalogWeb project used a web service reference to the IISExpress endpoint for the MusicalogService.
 
-Testing MusicalWeb
+Testing MusicalogWeb
 ------------------
 
 Set the MusicalogWeb project as the startup project.
